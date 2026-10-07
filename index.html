@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harawkan Tulips 🌷 | Exclusive Floral Experience</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        tulipPink: '#FE9EC7',
+                        tulipCream: '#F9F6C4',
+                        tulipSky: '#89D4FF',
+                        tulipBlue: '#44ACFF',
+                        tulipDark: '#1E293B',
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        pulseGlow: {
+                            '0%, 100%': { opacity: '0.5', transform: 'scale(1)' },
+                            '50%': { opacity: '0.8', transform: 'scale(1.05)' },
+                        }
+                    },
+                    animation: {
+                        float: 'float 5s ease-in-out infinite',
+                        pulseGlow: 'pulseGlow 4s ease-in-out infinite',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        :root {
+            --tulip-pink: #FE9EC7;
+            --tulip-cream: #F9F6C4;
+            --tulip-sky: #89D4FF;
+            --tulip-blue: #44ACFF;
+            --tulip-dark: #1E293B;
+            --body-bg: linear-gradient(135deg, #FFFDF0 0%, #FFFFFF 40%, #F0F9FF 75%, #FFF0F6 100%);
+            --glass-bg: rgba(255, 255, 255, 0.82);
+            --glass-border: rgba(254, 158, 199, 0.25);
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: var(--body-bg);
+            color: var(--tulip-dark);
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        .glass-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 10px 30px -5px rgba(68, 172, 255, 0.08);
+        }
+
+        .glass-card-hover {
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .glass-card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 22px 40px -10px rgba(68, 172, 255, 0.25);
+            border-color: rgba(68, 172, 255, 0.5);
+        }
+
+        .brand-title-gradient {
+            background: linear-gradient(120deg, #FE9EC7 0%, #44ACFF 55%, #1E293B 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 2px 8px rgba(254, 158, 199, 0.35));
+        }
+
+        .hero-title-gradient {
+            background: linear-gradient(120deg, var(--tulip-pink) 0%, var(--tulip-blue) 50%, #2563EB 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .btn-build-bouquet {
+            background: linear-gradient(135deg, var(--tulip-pink) 0%, var(--tulip-blue) 100%);
+            color: #FFFFFF;
+            box-shadow: 0 6px 20px -2px rgba(68, 172, 255, 0.45);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+
+        .btn-build-bouquet:hover {
+            background: linear-gradient(135deg, var(--tulip-blue) 0%, var(--tulip-pink) 100%);
+            transform: translateY(-2px) scale(1.03);
+            box-shadow: 0 12px 28px -2px rgba(254, 158, 199, 0.55);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--tulip-cream);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--tulip-blue);
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--tulip-pink);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between">
+
+    <nav class="sticky top-0 z-50 glass-card px-6 py-4 border-b border-pink-100/60">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-tulipPink to-tulipBlue flex items-center justify-center text-white shadow-md transform group-hover:rotate-12 transition-transform duration-300">
+                    🌷
+                </div>
+                <span class="font-serif font-extrabold text-2xl md:text-3xl tracking-tight brand-title-gradient">
+                    Harawkan Tulips
+                </span>
+            </a>
+            <div class="hidden md:flex items-center space-x-8 text-sm font-semibold text-slate-700">
+                <a href="#about" class="hover:text-tulipBlue transition-colors">About Us</a>
+                <a href="#gallery" class="hover:text-tulipBlue transition-colors">Varieties</a>
+                <a href="#tips" class="hover:text-tulipBlue transition-colors">Daily Tips</a>
+                <a href="#builder" class="hover:text-tulipBlue transition-colors">Bouquet Builder</a>
+            </div>
+            <a href="#builder" class="btn-build-bouquet text-xs md:text-sm font-bold px-6 py-2.5 rounded-full flex items-center gap-2">
+                <span>Build Bouquet</span>
+                <i class="fa-solid fa-layer-group text-xs"></i>
+            </a>
+        </div>
+    </nav>
+
+    <header class="relative pt-12 pb-16 px-6 overflow-hidden">
+        <div class="absolute top-10 left-1/4 w-80 h-80 bg-tulipPink/20 rounded-full blur-3xl animate-pulseGlow pointer-events-none"></div>
+        <div class="absolute top-20 right-1/4 w-96 h-96 bg-tulipSky/30 rounded-full blur-3xl animate-pulseGlow pointer-events-none" style="animation-delay: 2s;"></div>
+
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto relative z-10 mb-12">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-tulipCream text-slate-800 text-xs font-bold tracking-wide uppercase mb-5 border border-yellow-300/80 shadow-sm animate-float">
+                    <i class="fa-solid fa-sparkles text-tulipPink"></i> Welcome to Harawkan Tulips Sanctuary
+                </div>
+                
+                <h1 class="font-serif text-5xl md:text-7xl font-extrabold tracking-tight text-slate-900 leading-tight mb-6">
+                    Sensational Beauty at <br>
+                    <span class="hero-title-gradient">Harawkan Tulips</span>
+                </h1>
+
+                <p class="text-base md:text-lg text-slate-600 max-w-2xl mx-auto font-light leading-relaxed">
+                    Step into an exquisite world of handpicked tulip arrangements, timeless elegance, and joyful spring colors designed to brighten every moment.
+                </p>
+            </div>
+
+            <!-- Showcase Images Grid in Home Section (download 1 & download 2) -->
+            <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto relative z-10">
+                <div class="relative group rounded-3xl overflow-hidden shadow-2xl border-4 border-white aspect-[4/3]">
+                    <img src="public/Harawkan Tulip.jfif" alt="Harawkan Soft Pink Bouquet" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/70 via-transparent to-transparent flex items-end p-6">
+                        <span class="text-white font-serif font-bold text-xl drop-shadow-md">Signature Soft Pink Arrangement</span>
+                    </div>
+                </div>
+
+                <div class="relative group rounded-3xl overflow-hidden shadow-2xl border-4 border-white aspect-[4/3]">
+                    <img src="public/download (2).jfif" alt="Harawkan Luxury White & Blue Bouquet" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/70 via-transparent to-transparent flex items-end p-6">
+                        <span class="text-white font-serif font-bold text-xl drop-shadow-md">Exclusive White & Sky Blue Bouquet</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-6 space-y-24 mb-20 flex-grow">
+
+        <section id="about" class="scroll-mt-28">
+            <div class="glass-card rounded-3xl p-8 md:p-12 relative overflow-hidden">
+                <div class="grid md:grid-cols-2 gap-10 items-center">
+                    <div class="space-y-5">
+                        <div class="inline-block px-3 py-1 rounded-md bg-tulipPink/20 text-pink-600 font-bold text-xs uppercase tracking-wider">
+                            Botanical Excellence
+                        </div>
+                        <h2 class="font-serif text-3xl md:text-4xl font-bold text-slate-800">
+                            The Essence of Harawkan Tulips
+                        </h2>
+                        <p class="text-slate-600 leading-relaxed">
+                            At <strong>Harawkan Tulips</strong>, we celebrate the ultimate symbol of love, refined grace, and fresh beginnings. Each flower is cultivated with passion to offer stunning visual beauty and tranquility.
+                        </p>
+                        <p class="text-slate-600 leading-relaxed">
+                            Whether you favor romantic soft pinks, soothing cream whites, or rare royal sky blues, our curated blooms bring unparalleled charm into every setting.
+                        </p>
+                    </div>
+
+                    <div class="rounded-2xl overflow-hidden shadow-xl border-4 border-white h-80">
+                        <img src="public/download (1).jfif" alt="Harawkan Tulips Banner" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="gallery" class="scroll-mt-28">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-tulipBlue font-bold text-xs uppercase tracking-widest">Our Signature Palette</span>
+                <h2 class="font-serif text-3xl md:text-5xl font-bold text-slate-800 mt-2">Favorite Tulip Varieties</h2>
+                <p class="text-slate-600 mt-3">Discover the distinct meanings and breathtaking visuals of our signature Harawkan varieties.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Pink Tulips Card -->
+                <div class="glass-card glass-card-hover rounded-2xl overflow-hidden flex flex-col justify-between">
+                    <div>
+                        <div class="h-56 overflow-hidden relative">
+                            <img src="public/Pink Tulips.jfif" alt="Pink Tulips" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-500">
+                            <span class="absolute top-3 right-3 bg-tulipPink text-slate-900 font-bold text-xs px-3 py-1 rounded-full shadow-md">
+                                Soft Pink
+                            </span>
+                        </div>
+                        <div class="p-5">
+                            <h3 class="font-serif text-xl font-bold text-slate-800 mb-2">Pink Tulips</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Expressing affection, happiness, and gentle care. Perfect for celebrating special bonds and heartwarming occasions.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="px-5 pb-5">
+                        <span class="block w-full text-center text-xs font-semibold py-2 rounded-lg bg-pink-50 text-pink-600 border border-pink-200">
+                            Symbol of Love & Affection
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Cream Beige Tulips Card -->
+                <div class="glass-card glass-card-hover rounded-2xl overflow-hidden flex flex-col justify-between">
+                    <div>
+                        <div class="h-56 overflow-hidden relative">
+                            <img src="public/Cream Beige.jfif" alt="Cream Beige Tulips" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-500">
+                            <span class="absolute top-3 right-3 bg-yellow-100 text-yellow-800 font-bold text-xs px-3 py-1 rounded-full shadow-md">
+                                Cream Beige
+                            </span>
+                        </div>
+                        <div class="p-5">
+                            <h3 class="font-serif text-xl font-bold text-slate-800 mb-2">Cream & Beige</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Representing classical sophistication, purity, and serenity. Adds an elevated aura of luxury wherever placed.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="px-5 pb-5">
+                        <span class="block w-full text-center text-xs font-semibold py-2 rounded-lg bg-yellow-50 text-yellow-700 border border-yellow-200">
+                            Symbol of Pure Elegance
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Sky Blue Tulips Card -->
+                <div class="glass-card glass-card-hover rounded-2xl overflow-hidden flex flex-col justify-between">
+                    <div>
+                        <div class="h-56 overflow-hidden relative">
+                            <img src="public/Sky Blue.jfif" alt="Sky Blue Tulips" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-500">
+                            <span class="absolute top-3 right-3 bg-tulipSky text-slate-900 font-bold text-xs px-3 py-1 rounded-full shadow-md">
+                                Sky Blue
+                            </span>
+                        </div>
+                        <div class="p-5">
+                            <h3 class="font-serif text-xl font-bold text-slate-800 mb-2">Sky Blue Tulips</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Dreamy, peaceful shades embodying high aspirations, serene spring skies, and tranquil moments.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="px-5 pb-5">
+                        <span class="block w-full text-center text-xs font-semibold py-2 rounded-lg bg-sky-50 text-tulipBlue border border-sky-200">
+                            Symbol of Peace & Dreams
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Deep Blue Tulips Card -->
+                <div class="glass-card glass-card-hover rounded-2xl overflow-hidden flex flex-col justify-between">
+                    <div>
+                        <div class="h-56 overflow-hidden relative">
+                            <img src="public/Deep Blue.jfif" alt="Deep Blue Tulips" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-500">
+                            <span class="absolute top-3 right-3 bg-tulipBlue text-white font-bold text-xs px-3 py-1 rounded-full shadow-md">
+                                Deep Blue
+                            </span>
+                        </div>
+                        <div class="p-5">
+                            <h3 class="font-serif text-xl font-bold text-slate-800 mb-2">Deep Blue Tulips</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                A magnificent royal bouquet choice symbolizing nobility, deep commitment, and rich artistic allure.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="px-5 pb-5">
+                        <span class="block w-full text-center text-xs font-semibold py-2 rounded-lg bg-blue-50 text-blue-700 border border-blue-200">
+                            Symbol of Royal Dignity
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tips" class="scroll-mt-28">
+            <div class="glass-card rounded-3xl p-8 md:p-12 border-2 border-tulipPink/40 bg-gradient-to-r from-white/90 via-pink-50/50 to-blue-50/50 text-center max-w-3xl mx-auto shadow-xl">
+                <div class="w-16 h-16 bg-tulipCream rounded-full flex items-center justify-center mx-auto mb-4 border-2 border-yellow-300 text-2xl shadow-inner">
+                    💡
+                </div>
+
+                <h2 class="font-serif text-3xl font-bold text-slate-800 mb-2">Harawkan Daily Care Tip</h2>
+                <p class="text-xs text-slate-500 mb-6">Learn how to extend the life of your fresh Harawkan blooms.</p>
+
+                <div class="bg-white/90 rounded-2xl p-6 md:p-8 shadow-sm border border-pink-100 min-h-[130px] flex items-center justify-center mb-8 relative transition-all duration-300" id="tip-container">
+                    <p id="tip-text" class="text-base md:text-lg text-slate-700 font-medium italic">
+                        "Trim tulip stems diagonally at a 45-degree angle under cold running water before putting them in your vase."
+                    </p>
+                </div>
+
+                <button id="tip-btn" class="btn-build-bouquet font-bold px-8 py-3.5 rounded-full text-sm inline-flex items-center gap-2">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    <span>Get Care Advice</span>
+                </button>
+            </div>
+        </section>
+
+        <section id="builder" class="scroll-mt-28">
+            <div class="glass-card rounded-3xl p-8 md:p-12 border border-sky-100">
+                <div class="text-center max-w-2xl mx-auto mb-10">
+                    <span class="text-tulipPink font-bold text-xs uppercase tracking-widest">Personalize Your Flowers</span>
+                    <h2 class="font-serif text-3xl md:text-4xl font-bold text-slate-800 mt-1">Virtual Bouquet Builder 💐</h2>
+                    <p class="text-slate-600 text-xs mt-2">Combine your favored color shades to build your dream bouquet!</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div class="space-y-6">
+                        <div>
+                            <label class="block text-sm font-bold text-slate-700 mb-3">Select Color Stems:</label>
+                            <div class="grid grid-cols-2 gap-3">
+                                <button onclick="addTulip('#FE9EC7', 'Soft Pink')" class="p-3 rounded-xl border border-pink-200 bg-pink-50 hover:bg-pink-100 flex items-center gap-3 transition-colors text-left">
+                                    <span class="w-5 h-5 rounded-full bg-tulipPink shadow-sm"></span>
+                                    <span class="text-xs font-bold text-slate-700">Soft Pink</span>
+                                </button>
+                                <button onclick="addTulip('#F9F6C4', 'Cream Beige')" class="p-3 rounded-xl border border-yellow-200 bg-yellow-50 hover:bg-yellow-100 flex items-center gap-3 transition-colors text-left">
+                                    <span class="w-5 h-5 rounded-full bg-tulipCream border border-yellow-300 shadow-sm"></span>
+                                    <span class="text-xs font-bold text-slate-700">Cream Beige</span>
+                                </button>
+                                <button onclick="addTulip('#89D4FF', 'Sky Blue')" class="p-3 rounded-xl border border-sky-200 bg-sky-50 hover:bg-sky-100 flex items-center gap-3 transition-colors text-left">
+                                    <span class="w-5 h-5 rounded-full bg-tulipSky shadow-sm"></span>
+                                    <span class="text-xs font-bold text-slate-700">Sky Blue</span>
+                                </button>
+                                <button onclick="addTulip('#44ACFF', 'Deep Blue')" class="p-3 rounded-xl border border-blue-200 bg-blue-50 hover:bg-blue-100 flex items-center gap-3 transition-colors text-left">
+                                    <span class="w-5 h-5 rounded-full bg-tulipBlue shadow-sm"></span>
+                                    <span class="text-xs font-bold text-slate-700">Deep Blue</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center justify-between pt-2">
+                            <span class="text-xs text-slate-600 font-medium">Bouquet Stems: <strong id="flower-count" class="text-tulipBlue text-sm">0</strong></span>
+                            <button onclick="clearBouquet()" class="text-xs text-red-500 hover:text-red-700 underline font-semibold">
+                                Clear Vase
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="bg-gradient-to-b from-sky-50/50 to-pink-50/50 rounded-2xl p-6 border border-slate-100 flex flex-col items-center justify-center min-h-[260px] relative">
+                        <div id="vase-display" class="flex flex-wrap justify-center items-end gap-2 max-w-[240px] h-36 mb-2">
+                            <p id="empty-msg" class="text-slate-400 text-xs italic self-center">Vase is empty! Select colors above to build your arrangement.</p>
+                        </div>
+                        <div class="w-24 h-20 bg-white/70 backdrop-blur-md border-2 border-sky-200 rounded-b-3xl rounded-t-lg shadow-inner flex items-center justify-center text-[10px] text-slate-500 font-bold tracking-widest uppercase">
+                            HARAWKAN
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="glass-card border-t border-pink-100 py-8 px-6">
+        <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+            <div>
+                <p class="font-serif font-bold text-slate-800 text-lg">Harawkan Tulips 🌷</p>
+                <p class="text-xs text-slate-500 mt-0.5">Bringing warmth, color, and tranquility to your world.</p>
+            </div>
+            
+            <p class="text-xs text-slate-600 font-medium">
+                © <span id="year">2026</span> Harawkan Tulips | Crafted with ❤️
+            </p>
+
+            <div class="flex items-center space-x-4 text-slate-500 text-sm">
+                <a href="#" class="hover:text-tulipPink transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="hover:text-tulipBlue transition-colors"><i class="fa-brands fa-pinterest"></i></a>
+                <a href="#" class="hover:text-tulipPink transition-colors"><i class="fa-brands fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            document.getElementById('year').textContent = new Date().getFullYear();
+
+            const careTips = [
+                "Trim tulip stems diagonally at a 45-degree angle under cold running water before putting them in your vase.",
+                "Keep tulips away from direct heat, harsh sunlight, and fresh fruit bowls.",
+                "Tulips love cold water! Add a couple of ice cubes to their vase every morning to keep them crisp and fresh.",
+                "Tulips keep growing in the vase! Trim them again whenever needed to keep your arrangement tidy.",
+                "Change the vase water every 1 to 2 days to prevent bacteria and ensure long-lasting blooms."
+            ];
+
+            const tipBtn = document.getElementById("tip-btn");
+            const tipText = document.getElementById("tip-text");
+            const tipContainer = document.getElementById("tip-container");
+
+            let currentTipIndex = 0;
+
+            tipBtn.addEventListener("click", () => {
+                tipContainer.classList.add("opacity-0", "scale-95");
+
+                setTimeout(() => {
+                    currentTipIndex = (currentTipIndex + 1) % careTips.length;
+                    tipText.textContent = `"${careTips[currentTipIndex]}"`;
+                    tipContainer.classList.remove("opacity-0", "scale-95");
+                }, 200);
+            });
+        });
+
+        const flowers = [];
+        const vaseDisplay = document.getElementById('vase-display');
+        const emptyMsg = document.getElementById('empty-msg');
+        const flowerCount = document.getElementById('flower-count');
+
+        function addTulip(colorHex, name) {
+            if (flowers.length >= 12) {
+                alert("Your vase is full with 12 lovely tulips!");
+                return;
+            }
+            flowers.push({ color: colorHex, name: name });
+            renderVase();
+        }
+
+        function clearBouquet() {
+            flowers.length = 0;
+            renderVase();
+        }
+
+        function renderVase() {
+            flowerCount.textContent = flowers.length;
+            vaseDisplay.innerHTML = '';
+
+            if (flowers.length === 0) {
+                vaseDisplay.appendChild(emptyMsg);
+                emptyMsg.style.display = 'block';
+                return;
+            }
+
+            flowers.forEach((flower, idx) => {
+                const flowerEl = document.createElement('div');
+                flowerEl.className = 'flex flex-col items-center animate-bounce';
+                flowerEl.style.animationDuration = '1.5s';
+                flowerEl.style.animationDelay = `${idx * 0.05}s`;
+                
+                flowerEl.innerHTML = `
+                    <div class="w-5 h-7 rounded-t-full rounded-b-md shadow-sm border border-black/10" style="background-color: ${flower.color};"></div>
+                    <div class="w-1 h-10 bg-emerald-400"></div>
+                `;
+                vaseDisplay.appendChild(flowerEl);
+            });
+        }
+    </script>
+</body>
+</html>
